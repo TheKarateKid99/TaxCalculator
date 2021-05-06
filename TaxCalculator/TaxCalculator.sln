@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxCalculator.Web", "TaxCalculator.Web.csproj", "{3C1670B4-64CC-410C-BC90-429252E024DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{63CC138F-DA98-4EF4-A27E-9E13C008B836}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{372D904E-F818-49B3-8DD1-039499B4AF37}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{6979E601-10DA-4D46-99D3-FD6222CE49AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{A60A3644-457A-40DD-8D61-1AD213807892}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2CB64E95-570B-4392-A69A-1A494F30FD71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxCalculator.Domain", "..\TaxCalculator.Domain\TaxCalculator.Domain.csproj", "{4105756B-A046-4708-A7A4-C0E1DA360006}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C1670B4-64CC-410C-BC90-429252E024DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C1670B4-64CC-410C-BC90-429252E024DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C1670B4-64CC-410C-BC90-429252E024DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C1670B4-64CC-410C-BC90-429252E024DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4105756B-A046-4708-A7A4-C0E1DA360006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4105756B-A046-4708-A7A4-C0E1DA360006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4105756B-A046-4708-A7A4-C0E1DA360006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4105756B-A046-4708-A7A4-C0E1DA360006}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3C1670B4-64CC-410C-BC90-429252E024DD} = {63CC138F-DA98-4EF4-A27E-9E13C008B836}
+		{4105756B-A046-4708-A7A4-C0E1DA360006} = {6979E601-10DA-4D46-99D3-FD6222CE49AE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62669FFC-E93D-4DB1-8FEF-037612813E72}
+	EndGlobalSection
+EndGlobal
