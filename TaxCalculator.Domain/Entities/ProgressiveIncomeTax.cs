@@ -9,38 +9,49 @@ namespace TaxCalculator.Domain.Entities
 {
     public class ProgressiveIncomeTax : IncomeTax
     {
-        
-        public ProgressiveIncomeTax(string postalCode, long income)
-            :base(postalCode,income)
+
+        public ProgressiveIncomeTax()
         {
-            
+
         }
 
-        public double CalculateProgressiveIncomeTax(double income, ProgressiveTaxLevelEnum progressiveTaxLevel)
+        public ProgressiveIncomeTax(string postalCode, double income)
+            : base(postalCode, income)
+        {
+
+        }
+
+        public double CalculateProgressiveIncomeTax(ProgressiveTaxLevelEnum progressiveTaxLevel)
         {
             switch (progressiveTaxLevel)
             {
                 case ProgressiveTaxLevelEnum.Level1:
-                    return ProgressiveTaxLevel1.CalculatedLevelTaxAmount(income);
+                    this.CalculatedAmount = ProgressiveTaxLevel1.CalculatedLevelTaxAmount(Income);
+                    return CalculatedAmount;
 
                 case ProgressiveTaxLevelEnum.Level2:
-                    return ProgressiveTaxLevel2.CalculatedLevelTaxAmount(income);
+                    this.CalculatedAmount = ProgressiveTaxLevel2.CalculatedLevelTaxAmount(Income);
+                    return CalculatedAmount;
 
                 case ProgressiveTaxLevelEnum.Level3:
-                    return ProgressiveTaxLevel3.CalculatedLevelTaxAmount(income);
+                    this.CalculatedAmount = ProgressiveTaxLevel3.CalculatedLevelTaxAmount(Income);
+                    return CalculatedAmount;
 
                 case ProgressiveTaxLevelEnum.Level4:
-                    return ProgressiveTaxLevel4.CalculatedLevelTaxAmount(income);
+                    this.CalculatedAmount = ProgressiveTaxLevel4.CalculatedLevelTaxAmount(Income);
+                    return CalculatedAmount;
 
                 case ProgressiveTaxLevelEnum.Level5:
-                    return ProgressiveTaxLevel5.CalculatedLevelTaxAmount(income);
+                    this.CalculatedAmount = ProgressiveTaxLevel5.CalculatedLevelTaxAmount(Income);
+                    return CalculatedAmount;
 
                 case ProgressiveTaxLevelEnum.Level6:
-                    return ProgressiveTaxLevel6.CalculatedLevelTaxAmount(income);
+                    this.CalculatedAmount = ProgressiveTaxLevel6.CalculatedLevelTaxAmount(Income);
+                    return CalculatedAmount;
 
                 default:
-                    return 0;
-
+                    this.CalculatedAmount = 0;
+                    return CalculatedAmount;
             }
 
         }

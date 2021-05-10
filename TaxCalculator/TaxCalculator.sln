@@ -19,11 +19,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxCalculator.Domain", "..\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxCalculator.UnitTestsNew", "..\TaxCalculator.UnitTestsNew\TaxCalculator.UnitTestsNew.csproj", "{EF3DD556-4D32-421F-8166-19278C49DB68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxCalculator.Services", "..\TaxCalculator.Services\TaxCalculator.Services.csproj", "{81F1B4C5-00EC-4824-B923-A9D478E321E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxCalculator.Services", "..\TaxCalculator.Services\TaxCalculator.Services.csproj", "{81F1B4C5-00EC-4824-B923-A9D478E321E2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositories", "Repositories", "{4E47EB71-C6FA-4141-867B-8C30A0CD0650}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxCalculator.Repository", "..\TaxCalculator.Repository\TaxCalculator.Repository.csproj", "{0AFDC38D-4E60-412E-8514-3455E1A7B28B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxCalculator.Repository", "..\TaxCalculator.Repository\TaxCalculator.Repository.csproj", "{0AFDC38D-4E60-412E-8514-3455E1A7B28B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxCalculator.Models", "..\TaxCalculator.Models\TaxCalculator.Models.csproj", "{453359CB-F496-4C7A-84A0-6566CF8EA4C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxCalculator.Common2", "..\TaxCalculator.Common2\TaxCalculator.Common2.csproj", "{383057F7-A43F-4C27-A232-B7131F2E9EF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{0AFDC38D-4E60-412E-8514-3455E1A7B28B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AFDC38D-4E60-412E-8514-3455E1A7B28B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AFDC38D-4E60-412E-8514-3455E1A7B28B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{453359CB-F496-4C7A-84A0-6566CF8EA4C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{453359CB-F496-4C7A-84A0-6566CF8EA4C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{453359CB-F496-4C7A-84A0-6566CF8EA4C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{453359CB-F496-4C7A-84A0-6566CF8EA4C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{383057F7-A43F-4C27-A232-B7131F2E9EF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{383057F7-A43F-4C27-A232-B7131F2E9EF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{383057F7-A43F-4C27-A232-B7131F2E9EF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{383057F7-A43F-4C27-A232-B7131F2E9EF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +74,8 @@ Global
 		{81F1B4C5-00EC-4824-B923-A9D478E321E2} = {A60A3644-457A-40DD-8D61-1AD213807892}
 		{4E47EB71-C6FA-4141-867B-8C30A0CD0650} = {372D904E-F818-49B3-8DD1-039499B4AF37}
 		{0AFDC38D-4E60-412E-8514-3455E1A7B28B} = {4E47EB71-C6FA-4141-867B-8C30A0CD0650}
+		{453359CB-F496-4C7A-84A0-6566CF8EA4C1} = {A60A3644-457A-40DD-8D61-1AD213807892}
+		{383057F7-A43F-4C27-A232-B7131F2E9EF9} = {A60A3644-457A-40DD-8D61-1AD213807892}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {62669FFC-E93D-4DB1-8FEF-037612813E72}

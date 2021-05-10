@@ -22,14 +22,14 @@ namespace TaxCalculator.UnitTestsNew
         public void Calculate_ProgressiveTax_Level1_Success()
         {
             //Arrange
-            var taxCalculated = new IncomeTax(postalCode: "7441", income: 5000);
+            var taxCalculated = new ProgressiveIncomeTax(postalCode: "7441", income: 5000);
             var progressiveTaxTotal = ProgressiveTaxLevelEnum.Level1;
 
             //Act
-            var result = _calculateIncomeTax.CalculateProgressiveIncomeTax(taxCalculated.Income,progressiveTaxTotal);
+            var result = taxCalculated.CalculateProgressiveIncomeTax(progressiveTaxTotal);
             //Assert
 
-            Assert.IsTrue(result == 5000);
+            Assert.IsTrue(result == 500);
 
         }
 
@@ -37,11 +37,11 @@ namespace TaxCalculator.UnitTestsNew
         public void Calculate_ProgressiveTax_Level2_Success()
         {
             //Arrange
-            var taxCalculated = new IncomeTax(postalCode: "7441", income: 33950);
+            var taxCalculated = new ProgressiveIncomeTax(postalCode: "7441", income: 33950);
             var progressiveTaxTotal = ProgressiveTaxLevelEnum.Level2;
 
             //Act
-            var result = _calculateIncomeTax.CalculateProgressiveIncomeTax(taxCalculated.Income, progressiveTaxTotal);
+            var result = taxCalculated.CalculateProgressiveIncomeTax(progressiveTaxTotal);
             //Assert
 
             Assert.IsTrue(result == 4675);
@@ -52,11 +52,11 @@ namespace TaxCalculator.UnitTestsNew
         public void Calculate_ProgressiveTax_Level6_Success()
         {
             //Arrange
-            var taxCalculated = new IncomeTax(postalCode: "7441", income: 400000);
+            var taxCalculated = new ProgressiveIncomeTax(postalCode: "7441", income: 400000);
             var progressiveTaxTotal = ProgressiveTaxLevelEnum.Level6;
 
             //Act
-            var result = _calculateIncomeTax.CalculateProgressiveIncomeTax(taxCalculated.Income, progressiveTaxTotal);
+            var result = taxCalculated.CalculateProgressiveIncomeTax(progressiveTaxTotal);
             //Assert
 
             Assert.IsTrue(Math.Round(result,2) == 117682.14);

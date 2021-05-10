@@ -5,14 +5,16 @@ namespace TaxCalculator.Domain.Entities.BaseClass
     public abstract class IncomeTax
     {
 
-        public IncomeTax(string postalCode, long income)
+        public IncomeTax(string postalCode, double income)
         {
             PostalCode = postalCode;
             Income = income;
+            Id = Guid.NewGuid();
+            CreatedDate = DateTime.Now;
         }
 
         public  Guid Id { get; private set; }
-        public decimal CalculatedAmount { get; private set; }
+        public double CalculatedAmount { get; set; }
         public DateTime CreatedDate { get; private set; }
 
         public string PostalCode { get; private set; }

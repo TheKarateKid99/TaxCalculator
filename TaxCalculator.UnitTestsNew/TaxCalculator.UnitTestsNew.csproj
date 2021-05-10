@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TaxCalculator.Domain\TaxCalculator.Domain.csproj" />
+    <ProjectReference Include="..\TaxCalculator\TaxCalculator.Web.csproj" />
   </ItemGroup>
 
 </Project>
