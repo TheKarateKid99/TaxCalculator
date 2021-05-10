@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using TaxCalculator.Domain.Entities;
 using TaxCalculator.Domain.Enums;
 using TaxCalculator.Domain.Interfaces;
@@ -21,14 +22,14 @@ namespace TaxCalculator.UnitTestsNew
         public void Calculate_ProgressiveTax_Level1_Success()
         {
             //Arrange
-            var taxCalculated = new IncomeTax(postalCode: "7441", income: 100);
+            var taxCalculated = new IncomeTax(postalCode: "7441", income: 5000);
             var progressiveTaxTotal = ProgressiveTaxLevelEnum.Level1;
 
             //Act
             var result = _calculateIncomeTax.CalculateProgressiveIncomeTax(taxCalculated.Income,progressiveTaxTotal);
             //Assert
 
-            Assert.IsTrue(result == 10);
+            Assert.IsTrue(result == 5000);
 
         }
 
@@ -51,14 +52,14 @@ namespace TaxCalculator.UnitTestsNew
         public void Calculate_ProgressiveTax_Level6_Success()
         {
             //Arrange
-            var taxCalculated = new IncomeTax(postalCode: "7441", income: 372951);
+            var taxCalculated = new IncomeTax(postalCode: "7441", income: 400000);
             var progressiveTaxTotal = ProgressiveTaxLevelEnum.Level6;
 
             //Act
             var result = _calculateIncomeTax.CalculateProgressiveIncomeTax(taxCalculated.Income, progressiveTaxTotal);
             //Assert
 
-            Assert.IsTrue(result == 4675);
+            Assert.IsTrue(Math.Round(result,2) == 117682.14);
 
         }
     }
