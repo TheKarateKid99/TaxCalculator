@@ -2,11 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using TaxCalculator.Domain.Entities.BaseClass;
+using TaxCalculator.Domain.Entities;
 
 namespace TaxCalculator.Repository
 {
-    public class IncomeTaxContext : DbContext
+    public partial class IncomeTaxContext : DbContext
     {
         public IncomeTaxContext()
         {
@@ -30,6 +30,9 @@ namespace TaxCalculator.Repository
             modelBuilder.Entity<IncomeTax>(entity =>
             {
                 entity.Property(e => e.Id)
+                .IsRequired();
+
+                entity.Property(e => e.Guid)
                     .IsRequired();
 
                 entity.Property(e => e.CalculatedAmount)
@@ -40,10 +43,11 @@ namespace TaxCalculator.Repository
 
                 entity.Property(e => e.CreatedDate)
                 .IsRequired();
-
-
-
             });
+
+            OnModelCreatingPartial(modelBuilder);
         }
+
+        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TaxCalculator.Domain.Entities.BaseClass;
+using TaxCalculator.Domain.Entities;
 using TaxCalculator.Domain.Enums;
 using TaxCalculator.Domain.TaxLevelsCalculations;
 
@@ -9,16 +9,12 @@ namespace TaxCalculator.Domain.Entities
 {
     public class ProgressiveIncomeTax : IncomeTax
     {
-
-        public ProgressiveIncomeTax()
-        {
-
-        }
+       
 
         public ProgressiveIncomeTax(string postalCode, double income)
             : base(postalCode, income)
         {
-
+           
         }
 
         public double CalculateProgressiveIncomeTax(ProgressiveTaxLevelEnum progressiveTaxLevel)

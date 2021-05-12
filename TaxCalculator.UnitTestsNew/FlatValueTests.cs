@@ -11,35 +11,35 @@ namespace TaxCalculator.UnitTestsNew
     [TestClass]
     public class FlatValueTests
     {
-        private ICalculateIncomeTax _calculateIncomeTax;
+        //private ICalculateIncomeTaxManager _calculateIncomeTax;
 
         [TestInitialize]
         public void Initialize()
         {
-            _calculateIncomeTax = new CalculateIncomeTaxManager();
+            //_calculateIncomeTax = new CalculateIncomeTaxManager();
         }
 
         [TestMethod]
         public void Calculate_FlatValueIncomeTax_UnderMinimumWage_Success()
         {
-            //var taxCalculated = new IncomeTax(postalCode: "7441", income: 199999 );
+            var taxCalculated = new FlatValueIncomeTax(postalCode: "7441", income: 199999);
 
-            ////Act
-            //var result = _calculateIncomeTax.CalculateFlatValueIncomeTax(taxCalculated.Income);
-            ////Assert
+            //Act
+            var result = taxCalculated.CalculateFlatValueIncomeTax();
+            //Assert
 
-            //Assert.IsTrue(result == 9999.95);
+            Assert.IsTrue(result == 9999.95);
         }
         [TestMethod]
         public void Calculate_FlatValueIncomeTax_AboveMinimumWage_Success()
         {
-            //var taxCalculated = new IncomeTax(postalCode: "7441", income: 200000);
+            var taxCalculated = new FlatValueIncomeTax(postalCode: "7441", income: 200000);
 
-            ////Act
-            //var result = _calculateIncomeTax.CalculateFlatValueIncomeTax(taxCalculated.Income);
-            ////Assert
+            //Act
+            var result = taxCalculated.CalculateFlatValueIncomeTax();
+            //Assert
 
-            //Assert.IsTrue(result == 10000);
+            Assert.IsTrue(result == 10000);
         }
     }
 }

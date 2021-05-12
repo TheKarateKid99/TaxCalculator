@@ -4,6 +4,7 @@ using System.Text;
 using TaxCalculator.Domain.Constants;
 using TaxCalculator.Domain.Entities;
 using TaxCalculator.Domain.Enums;
+using TaxCalculator.Domain.Interfaces;
 using TaxCalculator.Models;
 using TaxCalculator.Repository;
 
@@ -12,7 +13,7 @@ namespace TaxCalculator.Services
     public class TaxCalculatorService : ITaxCalculatorService
     {
         private readonly IIncomeTaxRepository _incomeTaxRepository;
-
+ 
         public TaxCalculatorService(IIncomeTaxRepository incomeTaxRepository)
         {
             _incomeTaxRepository = incomeTaxRepository;
@@ -30,12 +31,32 @@ namespace TaxCalculator.Services
                     incomeTax.CalculateProgressiveIncomeTax(progressiveTaxLexel);
 
                     //Save IncomeTax
-
-
-                    return true;
+                    var result = _incomeTaxRepository.CreateIncomeTax(incomeTax);
+                    isSuccessful = result != null;
+                    return isSuccessful;
                 }
 
-                return true;
+                if (incomeTaxDto.PostalCode == "A100")
+                {
+                    var incomeTax = new FlatRateIncomeTax(incomeTaxDto.PostalCode, incomeTaxDto.Income);
+                    incomeTax.CalculateFlatRateIncomeTax();
+
+                    var result = _incomeTaxRepository.CreateIncomeTax(incomeTax);
+
+                    isSuccessful = result != null;
+                }
+
+                if (incomeTaxDto.PostalCode == "7000")
+                {
+                    var incomeTax = new FlatValueIncomeTax(incomeTaxDto.PostalCode, incomeTaxDto.Income);
+                    incomeTax.CalculateFlatValueIncomeTax();
+
+                    var result = _incomeTaxRepository.CreateIncomeTax(incomeTax);
+
+                    isSuccessful = result != null;
+                }
+
+                return isSuccessful;
             }
             catch(Exception ex)
             {

@@ -11,24 +11,24 @@ namespace TaxCalculator.UnitTestsNew
     [TestClass]
     public class FlatRateTests
     {
-        private ICalculateIncomeTax _calculateIncomeTax;
+        //private ICalculateIncomeTaxManager _calculateIncomeTax;
 
         [TestInitialize]
         public void Initialize()
         {
-            _calculateIncomeTax = new CalculateIncomeTaxManager();
+            //_calculateIncomeTax = new CalculateIncomeTaxManager();
         }
 
         [TestMethod]
         public void Calculate_FlatRateIncomeTax_Success()
         {
-            //var taxCalculated = new IncomeTax(postalCode: "7441", income: 200000);
+            var taxCalculated = new FlatRateIncomeTax(postalCode: "7441", income: 200000);
 
-            ////Act
-            //var result = _calculateIncomeTax.CalculateFlatRateIncomeTax(taxCalculated.Income);
-            ////Assert
+            //Act
+            var result = taxCalculated.CalculateFlatRateIncomeTax();
+            //Assert
 
-            //Assert.IsTrue(result == 35000);
+            Assert.IsTrue(result == 35000);
         }
     }
 }

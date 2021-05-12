@@ -1,8 +1,32 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model TaxCalculator.Web.Views.Tax.IncomeTaxVM;
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @using (Html.BeginForm("CalculateIncomeTax", "IncomeTax", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken();
+        <h1 class="display-4">Tax Calculator</h1>
+        <div class="text-center">
+            <label>Postal Code: </label>&nbsp;@Html.TextBoxFor(m => m.PostalCode, new { maxlength = "6", size = "6" })
+            @Html.ValidationMessageFor(m => m.PostalCode, "", new { @class = "text-danger" })
+        </div>
+        <div class="text-center">
+            <label>Annual Income: </label>&nbsp;@Html.TextBoxFor(m => m.Income)
+            @Html.ValidationMessageFor(m => m.Income, "", new { @class = "text-danger" })
+        </div>
+        <div>
+            <input type="submit" value="Submit" />
+        </div>
+    }
+    @if ((string)TempData["SaveResult"] == "Success")
+    {
+        <strong class="text-success">You have successfully submitted your Income Tax</strong>
+    }
+    else if (((string)TempData["SaveResult"] == "Error"))
+    {
+        <strong class="text-danger">Error Occured submitting</strong>
+    }
+
 </div>

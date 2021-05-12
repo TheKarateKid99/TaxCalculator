@@ -25,12 +25,28 @@ namespace TaxCalculator.Web.Controllers
 
         [HttpPost]
         [Route("/CalculateIncomeTax")]
+        [ValidateAntiForgeryToken]
         public IActionResult CalculateIncomeTax(IncomeTaxVM incomeTaxVM)
         {
 
+            if (!ModelState.IsValid)
+            {
+                TempData["SaveResult"] = "Error";
+                return Redirect("Home/Index");
+            }
+
             var result = _taxCalculatorService.CalculateIncomeTax(incomeTaxVM.Map());
 
-            return View(result);
+            if(result == true)
+            {
+                TempData["SaveResult"] = "Success";
+            }
+            else
+            {
+                TempData["SaveResult"] = "Error";
+            }
+
+            return Redirect("Home/Index");
         }
     }
 }

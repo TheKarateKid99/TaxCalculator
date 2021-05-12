@@ -1,19 +1,26 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
-namespace TaxCalculator.Domain.Entities.BaseClass
+namespace TaxCalculator.Domain.Entities
 {
-    public abstract class IncomeTax
+    public class IncomeTax
     {
+        public IncomeTax()
+        {
+                
+        }
 
         public IncomeTax(string postalCode, double income)
         {
             PostalCode = postalCode;
             Income = income;
-            Id = Guid.NewGuid();
+            Guid = Guid.NewGuid();
             CreatedDate = DateTime.Now;
         }
 
-        public  Guid Id { get; private set; }
+        [Key]
+        public int Id { get; private set; }
+        public  Guid Guid { get; private set; }
         public double CalculatedAmount { get; set; }
         public DateTime CreatedDate { get; private set; }
 

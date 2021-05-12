@@ -25,9 +25,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositories", "Repositorie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxCalculator.Repository", "..\TaxCalculator.Repository\TaxCalculator.Repository.csproj", "{0AFDC38D-4E60-412E-8514-3455E1A7B28B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxCalculator.Models", "..\TaxCalculator.Models\TaxCalculator.Models.csproj", "{453359CB-F496-4C7A-84A0-6566CF8EA4C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxCalculator.Models", "..\TaxCalculator.Models\TaxCalculator.Models.csproj", "{453359CB-F496-4C7A-84A0-6566CF8EA4C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxCalculator.Common2", "..\TaxCalculator.Common2\TaxCalculator.Common2.csproj", "{383057F7-A43F-4C27-A232-B7131F2E9EF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxCalculator.Common", "..\TaxCalculator.Common2\TaxCalculator.Common.csproj", "{383057F7-A43F-4C27-A232-B7131F2E9EF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

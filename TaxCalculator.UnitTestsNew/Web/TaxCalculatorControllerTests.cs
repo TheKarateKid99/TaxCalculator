@@ -1,7 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using TaxCalculator.Domain.Entities;
+using TaxCalculator.Repository;
 using TaxCalculator.Services;
 using TaxCalculator.Web.Controllers;
 using TaxCalculator.Web.Views.Tax;
@@ -11,14 +14,21 @@ namespace TaxCalculator.UnitTestsNew.Web
     [TestClass]
     public class TaxCalculatorControllerTests
     {
+        private MockRepository _mockRepository;
         private IncomeTaxController _controller;
         private ITaxCalculatorService _taxCalculatorService;
+        private Mock<IIncomeTaxRepository> _mockIncomeTaxRepository;
 
         [TestInitialize]
         public void Initialize()
         {
-            _taxCalculatorService = new TaxCalculatorService();
+            _mockRepository = new MockRepository(MockBehavior.Strict);
+            _mockIncomeTaxRepository = _mockRepository.Create<IIncomeTaxRepository>();
+            _mockIncomeTaxRepository.Setup(x => x.CreateIncomeTax(It.IsAny<IncomeTax>())).Returns(new IncomeTax());
+            _taxCalculatorService = new TaxCalculatorService(_mockIncomeTaxRepository.Object);
             _controller = new IncomeTaxController(_taxCalculatorService);
+
+           
         }
 
         [TestMethod]

@@ -22,8 +22,8 @@ namespace TaxCalculator.Repository
 
             try
             {
-                _incomeTaxContext.AddAsync(entity);
-                _incomeTaxContext.SaveChangesAsync();
+                var result = _incomeTaxContext.Add(entity);
+                var outcome = _incomeTaxContext.SaveChanges();
 
                 return entity;
             }

@@ -10,12 +10,12 @@ namespace TaxCalculator.UnitTestsNew
     [TestClass]
     public class TaxCalculator
     {
-        private ICalculateIncomeTax _calculateIncomeTax;
+        //private ICalculateIncomeTaxManager _calculateIncomeTax;
 
         [TestInitialize]
        public void Initialize()
         {
-            _calculateIncomeTax = new CalculateIncomeTaxManager();
+            //_calculateIncomeTax = new CalculateIncomeTaxManager();
         }
 
         [TestMethod]
