@@ -10,12 +10,10 @@ namespace TaxCalculator.UnitTestsNew
     [TestClass]
     public class TaxCalculator
     {
-        //private ICalculateIncomeTaxManager _calculateIncomeTax;
-
         [TestInitialize]
        public void Initialize()
         {
-            //_calculateIncomeTax = new CalculateIncomeTaxManager();
+           
         }
 
         [TestMethod]
@@ -45,6 +43,51 @@ namespace TaxCalculator.UnitTestsNew
             //Assert
 
             Assert.IsTrue(result == 4675);
+
+        }
+
+        [TestMethod]
+        public void Calculate_ProgressiveTax_Level3_Success()
+        {
+            //Arrange
+            var taxCalculated = new ProgressiveIncomeTax(postalCode: "7441", income: 90000);
+            var progressiveTaxTotal = ProgressiveTaxLevelEnum.Level3;
+
+            //Act
+            var result = taxCalculated.CalculateProgressiveIncomeTax(progressiveTaxTotal);
+            //Assert
+
+            Assert.IsTrue(result == 6612.1);
+
+        }
+
+        [TestMethod]
+        public void Calculate_ProgressiveTax_Level4_Success()
+        {
+            //Arrange
+            var taxCalculated = new ProgressiveIncomeTax(postalCode: "7441", income: 150000);
+            var progressiveTaxTotal = ProgressiveTaxLevelEnum.Level4;
+
+            //Act
+            var result = taxCalculated.CalculateProgressiveIncomeTax(progressiveTaxTotal);
+            //Assert
+
+            Assert.IsTrue(result == 35719.32);
+
+        }
+
+        [TestMethod]
+        public void Calculate_ProgressiveTax_Level5_Success()
+        {
+            //Arrange
+            var taxCalculated = new ProgressiveIncomeTax(postalCode: "7441", income: 200000);
+            var progressiveTaxTotal = ProgressiveTaxLevelEnum.Level5;
+
+            //Act
+            var result = taxCalculated.CalculateProgressiveIncomeTax(progressiveTaxTotal);
+            //Assert
+
+            Assert.IsTrue(result == 51141.49);
 
         }
 

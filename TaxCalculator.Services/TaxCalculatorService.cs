@@ -24,8 +24,20 @@ namespace TaxCalculator.Services
             var isSuccessful = false;
             try
             {
-                if(incomeTaxDto.PostalCode == "7441" || incomeTaxDto.PostalCode == "1000")
+
+                if (string.IsNullOrEmpty(incomeTaxDto.PostalCode))
                 {
+                    return isSuccessful;
+                }
+
+                if (incomeTaxDto.Income <= 0)
+                {
+                    return isSuccessful;
+                }
+
+                if (incomeTaxDto.PostalCode == "7441" || incomeTaxDto.PostalCode == "1000")
+                {
+                    //Calculated Income Tax amount
                     var progressiveTaxLexel = ProgressiveTaxLevel(incomeTaxDto.Income);
                     var incomeTax = new ProgressiveIncomeTax(incomeTaxDto.PostalCode, incomeTaxDto.Income);
                     incomeTax.CalculateProgressiveIncomeTax(progressiveTaxLexel);
